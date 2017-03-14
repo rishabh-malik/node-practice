@@ -154,6 +154,18 @@
 
 //--------------------------------------------------------------------------------------------------------
 //express-package
+// var express=require('express');
+
+// var app=express();                //to access the express functionality
+// app.get('/',function(req,res){      //get is a express method to get the response
+//   res.send('this is the home page')
+// });
+// app.get('/contact',function(req,res){      //get is a express method to get the response
+//   res.send('this is the contact page')
+// });
+// app.listen(3000);
+
+//route parameters in express
 var express=require('express');
 
 var app=express();                //to access the express functionality
@@ -162,6 +174,9 @@ app.get('/',function(req,res){      //get is a express method to get the respons
 });
 app.get('/contact',function(req,res){      //get is a express method to get the response
   res.send('this is the contact page')
+});
+app.get('/profile/:id',function(req,res){
+  res.send('you requested to see the id of '+req.params.id);    //to get the parameters
 });
 app.listen(3000);
 
