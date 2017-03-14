@@ -81,11 +81,15 @@ var http=require('http');
 var fs=require('fs');
 
 var myReadStream=fs.createReadStream(__dirname+'/read.txt','utf8');
+var myWriteStream=fs.createWriteStream(__dirname+'/write.txt');
+
 
 myReadStream.on('data',function(chunk){               //addind listener to it whenever a new buffer stream is received
           console.log('new chunk received: ');
+            myWriteStream.write(chunk);
           console.log(chunk);
 });
+
 
 
 
