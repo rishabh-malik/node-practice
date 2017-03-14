@@ -16,7 +16,28 @@
 
 //---------------------------------------------------------------------------------------------------------
 
+//util module
+// var util=require('util'); 
+// var Person=function(name){
+//     this.name=name;
+// };
 
+// util.inherits(Person, events.EventEmitter);             //the person variable will be able to inherit the events using util
+
+// var james=new Person('james');
+// var rishu=new Person('rishu');
+// var hrithik=new Person('hrithik');
+// var people=[james,rishu,hrithik];
+
+// people.forEach(function(person){
+//     person.on('speak',function(msg){
+//         console.log(person.name + "said: " + msg);
+//     });
+// });
+
+// james.emit('speak','hey hrithik');
+
+//---------------------------------------------------------------------------------------------------------
 
 
 
