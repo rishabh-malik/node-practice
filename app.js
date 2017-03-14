@@ -38,6 +38,21 @@
 // james.emit('speak','hey hrithik');
 
 //---------------------------------------------------------------------------------------------------------
+//reading and writing files
+ var fs=require('fs');
+// var read=fs.readFileSync('read.txt','utf8');               // to read the file
+// console.log(read);
+// fs.writeFileSync('write.txt',read);                       //to write in a file
+
+//another way by async it is better
+// fs.readFile('read.txt','utf8',function(err,data){          //async version-the code keeps on running while it is reading the file
+//     fs.writeFile('write1.txt',data)
+//     console.log(data);
+// });
+// console.log('hey');
+
+//---------------------------------------------------------------------------------------------------------
+
 
 
 
