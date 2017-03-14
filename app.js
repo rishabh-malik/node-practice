@@ -59,9 +59,32 @@
 // fs.mkdir('app1',function(){
 //     console.log('created directory');
 // });                                        //to create a directory synchonously
-fs.rmdir('app1',function(){
-    console.log('removed directory');
-});   
+//fs.rmdir('app1',function(){
+//    console.log('removed directory');
+//});   
+
+//---------------------------------------------------------------------------------------------------------
+
+var http=require('http');
+var server=http.createServer(function(req,res){            //creating a server using http module then the func gets trigger which takes 2 arguments the request and the response
+     console.log('request was made '+ req.url);
+      res.writeHead(200,{'Content-Type':'text/plain'});    //sending the response contains 2 things- status and Content
+      res.end('hey');                                      //to send it     
+});
+
+server.listen(3000,'127.0.0.1');
+console.log('listening to port 3000');
+
+
+
+
+
+
+
+
+
+//---------------------------------------------------------------------------------------------------------
+
 
 
 
