@@ -152,6 +152,20 @@
 // server.listen(3000,'127.0.0.1');
 // console.log('listening to port 3000')
 
+//--------------------------------------------------------------------------------------------------------
+//express-package
+var express=require('express');
+
+var app=express();                //to access the express functionality
+app.get('/',function(req,res){      //get is a express method to get the response
+  res.send('this is the home page')
+});
+app.get('/contact',function(req,res){      //get is a express method to get the response
+  res.send('this is the contact page')
+});
+app.listen(3000);
+
+
 
 
 
