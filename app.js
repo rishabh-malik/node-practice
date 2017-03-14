@@ -166,21 +166,35 @@
 // app.listen(3000);
 
 //route parameters in express
-var express=require('express');
+// var express=require('express');
 
+// var app=express();                //to access the express functionality
+// app.get('/',function(req,res){      //get is a express method to get the response
+//   res.send('this is the home page')
+// });
+// app.get('/contact',function(req,res){      //get is a express method to get the response
+//   res.send('this is the contact page')
+// });
+// app.get('/profile/:id',function(req,res){
+//   res.send('you requested to see the id of '+req.params.id);    //to get the parameters
+// });
+// app.listen(3000);
+//--------------------------------------------------------------------------------------------------------
+
+//sending html files using express package
+var express=require('express');
 var app=express();                //to access the express functionality
+app.set('view engine','ejs');     //to tell express that we are using the ejs template engine
 app.get('/',function(req,res){      //get is a express method to get the response
-  res.send('this is the home page')
+  res.sendFile(__dirname+'/index.html');
 });
 app.get('/contact',function(req,res){      //get is a express method to get the response
   res.send('this is the contact page')
 });
 app.get('/profile/:id',function(req,res){
-  res.send('you requested to see the id of '+req.params.id);    //to get the parameters
+  res.render('profile',{person:req.params.id});                               //to render a view
 });
 app.listen(3000);
-
-
 
 
 
