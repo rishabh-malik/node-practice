@@ -39,7 +39,7 @@
 
 //---------------------------------------------------------------------------------------------------------
 //reading and writing files
- var fs=require('fs');
+//var fs=require('fs');
 // var read=fs.readFileSync('read.txt','utf8');               // to read the file
 // console.log(read);
 // fs.writeFileSync('write.txt',read);                       //to write in a file
@@ -64,26 +64,44 @@
 //});   
 
 //---------------------------------------------------------------------------------------------------------
+//creating server and dealing with request and responses
+// var http=require('http');
+// var server=http.createServer(function(req,res){            //creating a server using http module then the func gets trigger which takes 2 arguments the request and the response
+//      console.log('request was made '+ req.url);
+//       res.writeHead(200,{'Content-Type':'text/plain'});    //sending the response contains 2 things- status and Content
+//       res.end('hey');                                      //to send it     
+// });
 
-var http=require('http');
-var server=http.createServer(function(req,res){            //creating a server using http module then the func gets trigger which takes 2 arguments the request and the response
-     console.log('request was made '+ req.url);
-      res.writeHead(200,{'Content-Type':'text/plain'});    //sending the response contains 2 things- status and Content
-      res.end('hey');                                      //to send it     
-});
-
-server.listen(3000,'127.0.0.1');
-console.log('listening to port 3000');
-
-
-
-
-
-
-
-
+// server.listen(3000,'127.0.0.1');
+// console.log('listening to port 3000');
 
 //---------------------------------------------------------------------------------------------------------
+//writable,readable streams and duplex-both
+var http=require('http');
+var fs=require('fs');
+
+var myReadStream=fs.createReadStream(__dirname+'/read.txt','utf8');
+
+myReadStream.on('data',function(chunk){               //addind listener to it whenever a new buffer stream is received
+          console.log('new chunk received: ');
+          console.log(chunk);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
