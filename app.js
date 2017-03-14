@@ -52,6 +52,16 @@
 // console.log('hey');
 
 //---------------------------------------------------------------------------------------------------------
+//creating and removing directories
+//fs.unlink('write.txt');                                    //to delete the file
+//fs.mkdirSync('app1');                                        //to create a directory synchonously
+//fs.rmdirSync('app1');                                        //to remove a directory synchonously
+// fs.mkdir('app1',function(){
+//     console.log('created directory');
+// });                                        //to create a directory synchonously
+fs.rmdir('app1',function(){
+    console.log('removed directory');
+});   
 
 
 
