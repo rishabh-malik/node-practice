@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+    <style>
+    h1{font-size: 48px;text-align: center;}
+    </style>
+    <body>
+        <h1>Welcome to <%= person%> website</h1>     
+        <% include partials/nav.ejs %>                
+        <p><%= qs.dept%></p>               //using the query string to get the dept from query
+    </body>
+</html>

@@ -182,6 +182,24 @@
 //--------------------------------------------------------------------------------------------------------
 
 //sending html files using express package
+// var express=require('express');
+// var app=express();                //to access the express functionality
+// app.use('/assets',express.static('assets'));        //using expressto use assets
+// app.set('view engine','ejs');     //to tell express that we are using the ejs template engine
+// app.get('/',function(req,res){      //get is a express method to get the response
+//   res.sendFile(__dirname+'/index.html');
+// });
+// app.get('/contact',function(req,res){      //get is a express method to get the response
+//   res.send('this is the contact page')
+// });
+// app.get('/profile/:id',function(req,res){
+//   res.render('profile',{person:req.params.id});                               //to render a view
+// });
+// app.listen(3000);
+
+//--------------------------------------------------------------------------------------------------------
+//query strings
+//POST
 var express=require('express');
 var app=express();                //to access the express functionality
 app.use('/assets',express.static('assets'));        //using expressto use assets
@@ -190,7 +208,7 @@ app.get('/',function(req,res){      //get is a express method to get the respons
   res.sendFile(__dirname+'/index.html');
 });
 app.get('/contact',function(req,res){      //get is a express method to get the response
-  res.send('this is the contact page')
+  res.render('contact',{qs:req.query});
 });
 app.get('/profile/:id',function(req,res){
   res.render('profile',{person:req.params.id});                               //to render a view
