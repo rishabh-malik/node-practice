@@ -199,24 +199,36 @@
 
 //--------------------------------------------------------------------------------------------------------
 //query strings
-//POST
+// var express=require('express');
+// var app=express();                //to access the express functionality
+// app.use('/assets',express.static('assets'));        //using expressto use assets
+// app.set('view engine','ejs');     //to tell express that we are using the ejs template engine
+// app.get('/',function(req,res){      //get is a express method to get the response
+//   res.sendFile(__dirname+'/index.html');
+// });
+// app.get('/contact',function(req,res){      //get is a express method to get the response
+//   res.render('contact',{qs:req.query});
+// });
+// app.get('/profile/:id',function(req,res){
+//   res.render('profile',{person:req.params.id});                               //to render a view
+// });
+// app.listen(3000);
+
+//--------------------------------------------------------------------------------------------------------
+//post to submit forms or info to the server
 var express=require('express');
 var app=express();                //to access the express functionality
+var bodyParser=require('body-parser');
 app.use('/assets',express.static('assets'));        //using expressto use assets
 app.set('view engine','ejs');     //to tell express that we are using the ejs template engine
-app.get('/',function(req,res){      //get is a express method to get the response
-  res.sendFile(__dirname+'/index.html');
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
+
+app.post('/contact-form', urlencodedParser, function (req, res) {
+  console.log(req.body);
+  res.send('contact-form')
 });
-app.get('/contact',function(req,res){      //get is a express method to get the response
-  res.render('contact',{qs:req.query});
-});
-app.get('/profile/:id',function(req,res){
-  res.render('profile',{person:req.params.id});                               //to render a view
-});
+
 app.listen(3000);
-
-
-
 
 
 
